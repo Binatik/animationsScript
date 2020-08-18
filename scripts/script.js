@@ -19,7 +19,7 @@ console.log(allAnimations.length)
 
 function performAnimationWhenScrolling() {
     //Если длина массива существует.
-    if (isCheckLength(allAnimations, 0)) allArr(allAnimations, 4);
+    if (isCheckLength(allAnimations, 0)) allArr(allAnimations, 9);
     //Если длина массива отсутствует.
     else return
 }
@@ -27,8 +27,9 @@ function performAnimationWhenScrolling() {
 function allArr(NodeList, NodeListPart) {
     NodeList.forEach(element => { 
         const heightElement = element.offsetHeight;
-        const animationsOffset = offset(element).topPage; 
-        console.log(heightElement)
+        const animationsOffset = offset(element).top; 
+        console.log(heightElement)   
+        console.log(animationsOffset);
 
         //Часть страницы, показанная на экране, и которую мы видим, указываем числом, допустим 3
         const part = NodeListPart;
@@ -44,10 +45,10 @@ function offset(element) {
     //Метод Element.getBoundingClientRect() возвращает размер элемента и его позицию относительно viewport.
     const partPage = element.getBoundingClientRect();
     return {
-        leftPage: partPage + getScrollLeft(),
-        topPage: partPage + getScrollTop(),
+        left: partPage['left'] + getScrollLeft(),
+        top: partPage['top'] + getScrollTop(),
     }
 } 
 
 window.addEventListener('scroll', performAnimationWhenScrolling) 
-performAnimationWhenScrolling(); 
+performAnimationWhenScrolling();  
