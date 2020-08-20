@@ -51,4 +51,10 @@ function offset(element) {
 } 
 
 window.addEventListener('scroll', performAnimationWhenScrolling) 
-performAnimationWhenScrolling();  
+performAnimationWhenScrolling();   
+
+console.log(`Генерация:  ${random(1, 100)}`);
+
+const random = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+
