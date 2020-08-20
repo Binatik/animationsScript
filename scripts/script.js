@@ -13,10 +13,6 @@ function isCheckLength(arr, num) {
     return arr.length > num ? true : false;
 } 
 
-console.log(allAnimations )
-console.log(allAnimations.length)
-
-
 function performAnimationWhenScrolling() {
     //Если длина массива существует.
     if (isCheckLength(allAnimations, 0)) allArr(allAnimations, 9);
@@ -28,8 +24,6 @@ function allArr(NodeList, NodeListPart) {
     NodeList.forEach(element => { 
         const heightElement = element.offsetHeight;
         const animationsOffset = offset(element).top; 
-        console.log(heightElement)   
-        console.log(animationsOffset);
 
         //Часть страницы, показанная на экране, и которую мы видим, указываем числом, допустим 3
         const part = NodeListPart;
@@ -51,10 +45,20 @@ function offset(element) {
 } 
 
 window.addEventListener('scroll', performAnimationWhenScrolling) 
-performAnimationWhenScrolling();   
+performAnimationWhenScrolling();  
 
-console.log(`Генерация:  ${random(1, 100)}`);
 
-const random = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
+const btnExample = document.querySelectorAll('.btn-example');  
+const animList = document.querySelectorAll('.anim');
+btnExample.forEach(element => {
+    element.addEventListener('click', function () {    
+        allAnimations.forEach(element => {
+            if(element.classList.contains('anim')) element.classList.remove('anim');
+        });     
+        setTimeout(() => performAnimationWhenScrolling(), 1000); 
+    })
+});  
+ 
+ 
 

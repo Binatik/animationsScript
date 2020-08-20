@@ -111,7 +111,7 @@ html {
 }
 
 .title {
-  color: rgba(0, 255, 64, 0.883);
+  color: #ff7f50;
   font-size: 48px;
 }
 
@@ -168,6 +168,27 @@ html {
   -o-transition: 1.9s;
   transition: 1.9s;
   opacity: 1;
+}
+
+.btn {
+  font-weight: bold;
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 1;
+  font-size: 24px;
+  background: transparent;
+  cursor: pointer;
+  color: #3399FF;
+  -webkit-transition: 0.1s;
+  -o-transition: 0.1s;
+  transition: 0.1s;
+}
+
+.btn:active {
+  text-shadow: 0 0 75px #ff7f50, 2px 2px 2px rgba(255,127,80,0);
+  -webkit-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  transform: translateY(2px);
 }
 
 .preview {
@@ -245,7 +266,7 @@ html {
   background: url('../image/banner2.webp') no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  height: 100vh;
+  min-height: 50vh;
 }
 
 .blackout::before {
@@ -259,7 +280,6 @@ html {
 
 .simple__example {
   margin: 100px 0 0 0;
-  padding: 10px;
   font-size: 32px;
   color: #fff;
 }
@@ -303,7 +323,7 @@ html {
   background: url('../image/banner3.webp') no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  height: 100vh;
+  min-height: 50vh;
 }
 
 @media (max-width: 769px) {
